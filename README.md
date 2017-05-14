@@ -1,3 +1,2 @@
-# recognet
-Simple and expressive .NET library for pose and gesture recognition targeting Kinect
-thioaijoifjwen;fo
+# Recognet
+Simple and expressive .NET library for pose and gesture recognition targeting Kinect.
