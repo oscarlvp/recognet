@@ -42,9 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Poses\BinaryPose.cs" />
+    <Compile Include="Poses\Body.cs" />
     <Compile Include="Poses\FunctionalPose.cs" />
+    <Compile Include="Poses\JointPath.cs" />
     <Compile Include="Poses\LogicalPoses.cs" />
+    <Compile Include="Poses\Selectors\JointPairSelector.cs" />
+    <Compile Include="Poses\Selectors\JointSelector.cs" />
     <Compile Include="Poses\Pose.cs" />
+    <Compile Include="Poses\Selectors\SegmentSelector.cs" />
+    <Compile Include="Poses\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Poses\Extensions.cs" />
   </ItemGroup>
