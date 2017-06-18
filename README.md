@@ -12,7 +12,7 @@ For example:
 
 In this way, a pose definition remains near to a human-readable description.
 
-##Pose description and recognition
+## Pose description and recognition
 
 A pose is represented by an instance of a class derived from `Pose`.
 Pose recognition is done following a Fuzzy Logic approach with the implementation of the `Matches` method.
@@ -53,7 +53,7 @@ Skeletons can be matched to a defined pose using the `Matches` method of one of 
     }
 ```
 
-##Development
+## Development
 
 This library is currently on development. It hasn't been properly tested and lots of changes are expected.
 
