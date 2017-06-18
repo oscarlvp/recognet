@@ -36,14 +36,14 @@ namespace Recognet.Poses
 
         #region Joint Pairs 
 
-        public static readonly JointPairSelector BothShoulders = new JointPairSelector(JointType.ShoulderRight, JointType.ShoulderLeft);
-        public static readonly JointPairSelector BothElbows = new JointPairSelector(JointType.ElbowRight, JointType.ElbowLeft);
-        public static readonly JointPairSelector BothWrists = new JointPairSelector(JointType.WristRight, JointType.WristLeft);
-        public static readonly JointPairSelector BothHands = new JointPairSelector(JointType.HandRight, JointType.HandLeft);
-        public static readonly JointPairSelector BothHips = new JointPairSelector(JointType.HipRight, JointType.HipLeft);
-        public static readonly JointPairSelector BothKnees = new JointPairSelector(JointType.KneeRight, JointType.KneeLeft);
-        public static readonly JointPairSelector BothAnkles = new JointPairSelector(JointType.AnkleRight, JointType.AnkleLeft);
-        public static readonly JointPairSelector BothFoots = new JointPairSelector(JointType.FootRight, JointType.FootLeft);
+        public static readonly JointPairSelector BothShoulders = new JointPairSelector(Body.RightShoulder, Body.LeftShoulder);
+        public static readonly JointPairSelector BothElbows = new JointPairSelector(Body.RightElbow, Body.LeftElbow);
+        public static readonly JointPairSelector BothWrists = new JointPairSelector(Body.RightWrist, Body.LeftWrist);
+        public static readonly JointPairSelector BothHands = new JointPairSelector(Body.RightHand, Body.LeftHand);
+        public static readonly JointPairSelector BothHips = new JointPairSelector(Body.RightHip, Body.LeftHip);
+        public static readonly JointPairSelector BothKnees = new JointPairSelector(Body.RightKnee, Body.LeftKnee);
+        public static readonly JointPairSelector BothAnkles = new JointPairSelector(Body.RightAnkle, Body.LeftAnkle);
+        public static readonly JointPairSelector BothFoots = new JointPairSelector(Body.RightFoot, Body.LeftFoot);
 
         #endregion
 
