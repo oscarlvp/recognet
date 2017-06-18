@@ -4,19 +4,19 @@ namespace Recognet.Poses.Selectors
 {
     public class JointSelector
     {
-        public JointSelector(JointType target)
+        public JointSelector(JointType joint)
         {
-            Target = target;
+            Joint = joint;
         }
 
-        public JointType Target { get; private set; }
+        public JointType Joint { get; private set; }
 
         public virtual Pose Above(JointType other)
         {
             return new FunctionalPose((sk) =>
                Utils.DifferenceDistanceRatio(
-                    sk.YDiff(Target, other), 
-                    sk.PathLengthBetween(Target, other))
+                    sk.YDiff(Joint, other), 
+                    sk.PathLengthBetween(Joint, other))
             );
         }
 
@@ -24,64 +24,64 @@ namespace Recognet.Poses.Selectors
         {
             return new FunctionalPose((sk) =>
                Utils.DifferenceDistanceRatio(
-                   sk.YDiff(other, Target), 
-                   sk.PathLengthBetween(other, Target)));
+                   sk.YDiff(other, Joint), 
+                   sk.PathLengthBetween(other, Joint)));
         }
 
         public virtual Pose AtTheSameHeightOf(JointType other)
         {
             return new FunctionalPose((sk) => 
                 Utils.AbsoluteDifferenceDistanceRatio(
-                    sk.YDiff(Target, other), 
-                    sk.PathLengthBetween(Target, other)));
+                    sk.YDiff(Joint, other), 
+                    sk.PathLengthBetween(Joint, other)));
         }
 
         public virtual Pose After(JointType other)
         {
             return new FunctionalPose((sk) => 
                 Utils.DifferenceDistanceRatio(
-                    sk.ZDiff(Target, other), 
-                    sk.PathLengthBetween(Target, other)));
+                    sk.ZDiff(Joint, other), 
+                    sk.PathLengthBetween(Joint, other)));
         }
 
         public virtual Pose Before(JointType other)
         {
             return new FunctionalPose((sk) =>
                 Utils.DifferenceDistanceRatio(
-                    sk.ZDiff(Target, other),
-                    sk.PathLengthBetween(other, Target)));
+                    sk.ZDiff(Joint, other),
+                    sk.PathLengthBetween(other, Joint)));
         }
 
         public virtual Pose AtTheSameDepthOf(JointType other)
         {
             return new FunctionalPose((sk) =>
                 Utils.AbsoluteDifferenceDistanceRatio(
-                    sk.ZDiff(Target, other),
-                    sk.PathLengthBetween(Target, other)));
+                    sk.ZDiff(Joint, other),
+                    sk.PathLengthBetween(Joint, other)));
         }
 
         public virtual Pose ToTheLeftOf(JointType other)
         {
             return new FunctionalPose((sk) =>
                 Utils.DifferenceDistanceRatio(
-                    sk.XDiff(Target, other),
-                    sk.PathLengthBetween(Target, other)));
+                    sk.XDiff(Joint, other),
+                    sk.PathLengthBetween(Joint, other)));
         }
 
         public virtual Pose ToTheRightOf(JointType other)
         {
             return new FunctionalPose((sk) => 
                 Utils.DifferenceDistanceRatio(
-                    sk.XDiff(other, Target), 
-                    sk.PathLengthBetween(other, Target)));
+                    sk.XDiff(other, Joint), 
+                    sk.PathLengthBetween(other, Joint)));
         }
 
         public virtual Pose AtTheSameLengthOf(JointType other)
         {
             return new FunctionalPose((sk) => 
                 Utils.AbsoluteDifferenceDistanceRatio(
-                    sk.XDiff(Target, other), 
-                    sk.PathLengthBetween(Target, other)));
+                    sk.XDiff(Joint, other), 
+                    sk.PathLengthBetween(Joint, other)));
         }
     }
 }
