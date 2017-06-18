@@ -62,5 +62,20 @@ namespace Recognet.Poses
         public static readonly SegmentSelector RightThigh = new SegmentSelector(JointType.HipRight, JointType.KneeRight);
 
         #endregion
+
+        #region Limbs
+
+        //NOTE: The actual anatomical limb deffinition includes the hands and foots.
+        //      Since the detection in Kinect of those parts is noisy and most of the time not needed to achieve
+        //      this kind of detection I left them out here.
+        //      This also makes the limb deffinition a lot simpler.
+
+        public static readonly LimbSelector LeftArm = new LimbSelector(LeftUpperarm, LeftForearm);
+        public static readonly LimbSelector RightArm = new LimbSelector(RightUpperarm, RightForearm);
+
+        public static readonly LimbSelector LeftLeg = new LimbSelector(LeftThigh, LeftShin);
+        public static readonly LimbSelector RightLeg = new LimbSelector(RightThigh, RightShin);
+
+        #endregion
     }
 }

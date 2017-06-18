@@ -16,6 +16,27 @@ namespace Recognet.Poses
             return Math.Sqrt(delthaX*delthaX + delthaY*delthaY + delthaZ*delthaZ);
         }
 
+        public static SkeletonPoint TranslateTo(this SkeletonPoint point, SkeletonPoint origin)
+        {
+            SkeletonPoint result = new SkeletonPoint();
+            result.X = origin.X - point.X;
+            result.Y = origin.Y - point.Y;
+            result.Z = origin.Z - point.Z;
+
+            return result;
+        }
+
+        public static double Length(this SkeletonPoint point)
+            => Math.Sqrt(point.X * point.X + point.Y * point.Y + point.Z * point.Z);
+
+
+        public static double DotProduct(this SkeletonPoint one, SkeletonPoint other)
+            => one.X * other.X + one.Y * other.Y + one.Z * other.Z;
+
+        public static double AngleTo(this SkeletonPoint point, SkeletonPoint other)
+            => Math.Acos(point.DotProduct(other) / (point.Length() * other.Length()));
+        
+
         public static double DistanceTo(this Joint first, Joint second)
             => first.Position.DistanceTo(second.Position);
 
