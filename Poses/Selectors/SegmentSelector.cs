@@ -1,9 +1,4 @@
 ﻿using Microsoft.Kinect;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Recognet.Poses.Selectors
 {
@@ -18,7 +13,6 @@ namespace Recognet.Poses.Selectors
         public JointType First { get; private set; }
 
         public JointType Second { get; private set; }
-
 
         public virtual Pose PointingLeft()
         {
