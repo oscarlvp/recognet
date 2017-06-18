@@ -36,21 +36,30 @@ namespace Recognet.Poses
 
         #region Joint Pairs 
 
-        public static readonly JointPairSelector BothShoulders = new JointPairSelector(Body.RightShoulder, Body.LeftShoulder);
-        public static readonly JointPairSelector BothElbows = new JointPairSelector(Body.RightElbow, Body.LeftElbow);
-        public static readonly JointPairSelector BothWrists = new JointPairSelector(Body.RightWrist, Body.LeftWrist);
-        public static readonly JointPairSelector BothHands = new JointPairSelector(Body.RightHand, Body.LeftHand);
-        public static readonly JointPairSelector BothHips = new JointPairSelector(Body.RightHip, Body.LeftHip);
-        public static readonly JointPairSelector BothKnees = new JointPairSelector(Body.RightKnee, Body.LeftKnee);
-        public static readonly JointPairSelector BothAnkles = new JointPairSelector(Body.RightAnkle, Body.LeftAnkle);
-        public static readonly JointPairSelector BothFoots = new JointPairSelector(Body.RightFoot, Body.LeftFoot);
+        public static readonly JointPairSelector BothShoulders = new JointPairSelector(RightShoulder, LeftShoulder);
+        public static readonly JointPairSelector BothElbows = new JointPairSelector(RightElbow, LeftElbow);
+        public static readonly JointPairSelector BothWrists = new JointPairSelector(RightWrist, LeftWrist);
+        public static readonly JointPairSelector BothHands = new JointPairSelector(RightHand, LeftHand);
+        public static readonly JointPairSelector BothHips = new JointPairSelector(RightHip, LeftHip);
+        public static readonly JointPairSelector BothKnees = new JointPairSelector(RightKnee, LeftKnee);
+        public static readonly JointPairSelector BothAnkles = new JointPairSelector(RightAnkle, LeftAnkle);
+        public static readonly JointPairSelector BothFoots = new JointPairSelector(RightFoot, LeftFoot);
 
         #endregion
 
         #region Segments
 
-        public static readonly SegmentSelector LeftForearm = new SegmentSelector(JointType.WristLeft, JointType.ElbowLeft);
-        public static readonly SegmentSelector RightForearm = new SegmentSelector(JointType.WristRight, JointType.ElbowRight);
+        public static readonly SegmentSelector LeftForearm = new SegmentSelector(JointType.ElbowLeft, JointType.WristLeft);
+        public static readonly SegmentSelector RightForearm = new SegmentSelector(JointType.ElbowRight, JointType.WristRight);
+
+        public static readonly SegmentSelector LeftUpperarm = new SegmentSelector(JointType.ShoulderLeft, JointType.ElbowLeft);
+        public static readonly SegmentSelector RightUpperarm = new SegmentSelector(JointType.ShoulderRight, JointType.ElbowRight);
+
+        public static readonly SegmentSelector LeftShin = new SegmentSelector(JointType.KneeLeft, JointType.AnkleLeft);
+        public static readonly SegmentSelector RightShin = new SegmentSelector(JointType.KneeRight, JointType.AnkleRight);
+
+        public static readonly SegmentSelector LeftThigh = new SegmentSelector(JointType.HipLeft, JointType.KneeLeft);
+        public static readonly SegmentSelector RightThigh = new SegmentSelector(JointType.HipRight, JointType.KneeRight);
 
         #endregion
     }
