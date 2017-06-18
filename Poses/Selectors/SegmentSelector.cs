@@ -4,62 +4,62 @@ namespace Recognet.Poses.Selectors
 {
     public class SegmentSelector
     {
-        public SegmentSelector(JointType first, JointType second)
+        public SegmentSelector(JointType from, JointType to)
         {
-            First = first;
-            Second = second;
+            To = to;
+            From = from;
         }
 
-        public JointType First { get; private set; }
+        public JointType To { get; private set; }
 
-        public JointType Second { get; private set; }
+        public JointType From { get; private set; }
 
         public virtual Pose PointingLeft()
         {
             return new FunctionalPose((sk) => 
                 Utils.DifferenceDistanceRatio(
-                    sk.XDiff(First, Second),
-                    sk.DistanceBetween(First, Second)));
+                    sk.XDiff(To, From),
+                    sk.DistanceBetween(To, From)));
         }
         
         public virtual Pose PointingRight()
         {
             return new FunctionalPose((sk) =>
                 Utils.DifferenceDistanceRatio(
-                    sk.XDiff(Second, First),
-                    sk.DistanceBetween(First, Second)));
+                    sk.XDiff(From, To),
+                    sk.DistanceBetween(To, From)));
         }
 
         public virtual Pose PointingUp()
         {
             return new FunctionalPose((sk) =>
                 Utils.DifferenceDistanceRatio(
-                    sk.YDiff(First, Second),
-                    sk.DistanceBetween(First, Second)));
+                    sk.YDiff(To, From),
+                    sk.DistanceBetween(To, From)));
         }
 
         public virtual Pose PointingDown()
         {
             return new FunctionalPose((sk) =>
                 Utils.DifferenceDistanceRatio(
-                    sk.YDiff(Second, First),
-                    sk.DistanceBetween(First, Second)));
+                    sk.YDiff(From, To),
+                    sk.DistanceBetween(To, From)));
         }
 
         public virtual Pose PointingBackwards()
         {
             return new FunctionalPose((sk) =>
                 Utils.DifferenceDistanceRatio(
-                    sk.ZDiff(First, Second),
-                    sk.DistanceBetween(First, Second)));
+                    sk.ZDiff(To, From),
+                    sk.DistanceBetween(To, From)));
         }
 
         public virtual Pose PointingForward()
         {
             return new FunctionalPose((sk) =>
                 Utils.DifferenceDistanceRatio(
-                    sk.YDiff(Second, First),
-                    sk.DistanceBetween(First, Second)));
+                    sk.YDiff(From, To),
+                    sk.DistanceBetween(To, From)));
         }
 
     }
